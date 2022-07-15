@@ -1,7 +1,7 @@
 import Web3 from "web3";
 
 export default class EthereumRpc {
-   provider;
+  provider;
 
   constructor(provider) {
     this.provider = provider;
@@ -31,8 +31,9 @@ export default class EthereumRpc {
     try {
       const web3 = new Web3(this.provider);
       const accounts = await web3.eth.getAccounts();
-      const message = "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad";
-      (web3.currentProvider)?.send(
+      const message =
+        "0x47173285a8d7341e5e972fc677286384f802f8ef42a5ec5f03bbfa254cb01fad";
+      web3.currentProvider?.send(
         {
           method: "eth_sign",
           params: [accounts[0], message],
@@ -78,7 +79,7 @@ export default class EthereumRpc {
       });
       return txRes.transactionHash;
     } catch (error) {
-      return error as;
+      return error;
     }
   }
 }
