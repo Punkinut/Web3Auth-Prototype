@@ -16,7 +16,7 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Web3Auth</a>
         </h1>
 
-        <p className={styles.description}>Try to login below 👏</p>
+        <p className={styles.description}> Try to login below 👏</p>
       </main>
 
       <footer className={styles.footer}>
